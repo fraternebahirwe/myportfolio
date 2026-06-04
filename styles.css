@@ -118,7 +118,7 @@ h1{
 }
 
 .circle-text text {
-  fill: #e4dcdc;
+  fill:var(--text-color);
   font-size: 10px;
   letter-spacing: 4.5px;
 }
@@ -127,6 +127,8 @@ h1{
   position: absolute;
   top: 50%;
   left: 50%;
+    right: 100%;
+
 
   width: 40px;
   height: 40px;
