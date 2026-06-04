@@ -98,3 +98,55 @@ h1{
     background-color: var(--secondary-color);
     color:var(--primary-color)
 }
+
+.circle-text{
+    display:flex;
+    justify-content: flex-end;
+}
+
+.hero {
+  position: relative;
+}
+
+
+.circle-text {
+  position: absolute;
+  top: 0px;
+  right: 80px;
+  width: 150px;
+  height: 150px;
+}
+
+.circle-text text {
+  fill: #e4dcdc;
+  font-size: 10px;
+  letter-spacing: 4.5px;
+}
+
+.center-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 40px;
+  height: 40px;
+
+  background: white;
+  border-radius: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+.black-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 10px;
+  height: 10px;
+
+  background: black;
+  border-radius: 50%;
+
+  transform: translate(-50%, -50%);
+}
