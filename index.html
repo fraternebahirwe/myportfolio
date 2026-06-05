@@ -13,101 +13,100 @@
 
     <body>
         <header>
-            <nav class="navbar">
+            <nav class="navbar container">
                 <div class="nav-name">
                     <span class="logo">FB</span> 
                     <span> Fraterne Bahirwe </span>
                 </div>
 
                 <ul class="nav-links">
-                    <a href="#about">About</a>
-                    <a href="#skills">Skills</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#contact">Contact</a>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
 
-                 <button class="theme-btn">☼</button>
+                <button class="theme-btn">☼</button>
             </nav>
         </header>
 
         <main>
-            <section class="hero">
-                <p class="hero-top">— FRONT-END DEVELOPER  •  SELF - TAUGHT</p>
+            <section class="hero container">
+                <div class="hero-main-content">
+                    <p class="hero-top">— FRONT-END DEVELOPER  •  SELF - TAUGHT</p>
+                    <h1>Fraterne <br>Bahirwe<span>.</span></h1>
+                    
+                    <div class="circle-text">
+                        <svg viewBox="0 0 200 200">
+                            <path
+                            id="circlePath"
+                            d="M100,100 m-70,0
+                                a70,70 0 1,1 140,0
+                                a70,70 0 1,1 -140,0"
+                            fill="none"
+                            />
+                            <text>
+                                <textPath href="#circlePath">
+                                    OPEN TO JUNIOR ROLES • FRONT-END  DEVELOPER •
+                                </textPath>
+                            </text>
+                        </svg>
+                        <div class="center-circle">
+                            <div class="black-dot"></div>
+                        </div>
+                    </div>
+                    
+                    <h2><span class="build">I'm building </span>with <span id="changing-text"></span></h2>
 
-                <h1>Fraterne <br>Bahirwe.</h1>
-                <div class="circle-text">
-                    <svg viewBox="0 0 200 200">
-                        <path
-                        id="circlePath"
-                        d="M100,100 m-70,0
-                            a70,70 0 1,1 140,0
-                            a70,70 0 1,1 -140,0"
-                        fill="none"
-                        />
+                    <p class="hero-description">
+                        Passionate about web development and constantly learning. <br>
+                        I build responsive websites with HTML, CSS, and JavaScript.
+                    </p>
 
-                        <text>
-                            <textPath href="#circlePath">
-                                OPEN TO JUNIOR ROLES • FRONT-END  DEVELOPER •
-                            </textPath>
-                        </text>
-                    </svg>
-                    <div class="center-circle">
-                        <div class="black-dot"></div>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn-primary">See my work →</a>
+                        <a href="#contact" class="btn-secondary">Get in touch</a>
                     </div>
                 </div>
-                <h2><span class="build">I'm building </span>with <span id="changing-text"></span></h2>
-
-                <p class="hero-description">
-                    Passionate about web development and constantly learning. <br>
-                    I build responsive websites with HTML, CSS, and JavaScript.
-                </p>
-
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn-primary">See my work →</a>
-                    <a href="#contact" class="btn-secondary">Get in touch</a>
-                </div>
             </section>
+
             <section class="skills-marquee">
                 <div class="track">
                     <span>HTML + CSS + JAVASCRIPT + GIT & GITHUB + RESPONSIVE DESIGN + DOM & EVENTS +</span>
-
                     <span>HTML + CSS + JAVASCRIPT + GIT & GITHUB + RESPONSIVE DESIGN + DOM & EVENTS +</span>
-
                 </div>
             </section>
 
-            <section class="about" id="about">
+            <section class="about container" id="about">
                 <p class="section-label">(01) — ABOUT ME</p>
-
                 <h2>Passionate about code, driven by growth, and always learning.</h2>
 
                 <article class="about-content">
                     <div class="about-text">
-                    <p>
-                        I’m <strong>Fraterne</strong>, a self-taught developer focused on
-                        building modern and responsive web experiences with
-                        <strong>HTML, CSS, and JavaScript</strong>.
-                    </p>
+                        <p>
+                            I’m <strong>Fraterne</strong>, a self-taught developer focused on
+                            building modern and responsive web experiences with
+                            <strong>HTML, CSS, and JavaScript</strong>.
+                        </p>
 
-                    <p>
-                        I treat learning like training: a little every day. Through practice,
-                        projects, and open-source contributions, I keep building and improving.
-                    </p>
+                        <p>
+                            I treat learning like training: a little every day. Through practice,
+                            projects, and open-source contributions, I keep building and improving.
+                        </p>
 
-                    <div class="about-info">
-                        <p><span>BASED IN</span><strong> Kigali, Rwanda</strong></p>
-                        <p><span>FOCUS</span><strong> Front-end & JS</strong></p>
-                        <p><span>LEARNING</span><strong> JavaScript, daily</strong></p>
-                        <p><span>SPEAKS</span><strong> EN · FR</strong></p>
+                        <div class="about-info">
+                            <p><span>BASED IN</span><strong> Kigali, Rwanda</strong></p>
+                            <p><span>FOCUS</span><strong> Front-end & JS</strong></p>
+                            <p><span>LEARNING</span><strong> JavaScript, daily</strong></p>
+                            <p><span>SPEAKS</span><strong> EN · FR</strong></p>
+                        </div>
                     </div>
-                    </div>
 
-                    <img src="fbi.png" alt="Fraterne Bahirwe" class="about-img" height="300px"
-                    width=50%>
+                    <img src="fbi.png" alt="Fraterne Bahirwe" class="about-img" height="300px" width="50%">
                 </article>
             </section>
 
-            <section class="skills" id="skills">
+            <section class="skills container" id="skills">
                 <p class="section-label">(02) — SKILLS & TOOLS</p>
                 <h2>What I work with.</h2>
 
@@ -150,9 +149,8 @@
                 </div>
             </section>
 
-            <section class="projects" id="projects">
+            <section class="projects container" id="projects">
                 <p class="section-label">(03) — SELECTED WORK</p>
-
                 <h2>Things I've built.</h2>
 
                 <div class="filters">
@@ -161,22 +159,15 @@
                     <button>CSS</button>
                     <button>JavaScript</button>
                 </div>
-                <div class="projects-grid">
 
-                    <!-- Project 1 -->
+                <div class="projects-grid">
                     <article class="project-card">
                         <div class="project-image">
                             <span class="project-number">01</span>
                         </div>
-
                         <div class="project-content">
                             <h3>Speed Typing Game ⚡</h3>
-
-                            <p>
-                                A typing game built with JavaScript where players test their speed,
-                                accuracy and track their score in real time.
-                            </p>
-
+                            <p>A typing game built with JavaScript where players test their speed, accuracy and track their score in real time.</p>
                             <div class="tags">
                                 <span>HTML</span>
                                 <span>CSS</span>
@@ -185,20 +176,13 @@
                         </div>
                     </article>
 
-                    <!-- Project 2 -->
                     <article class="project-card">
                         <div class="project-image">
                             <span class="project-number">02</span>
                         </div>
-
                         <div class="project-content">
                             <h3>Tech Conference Website</h3>
-
-                            <p>
-                                A responsive conference website featuring event details,
-                                speakers, schedules and a contact section.
-                            </p>
-
+                            <p>A responsive conference website featuring event details, speakers, schedules and a contact section.</p>
                             <div class="tags">
                                 <span>HTML</span>
                                 <span>CSS</span>
@@ -207,20 +191,13 @@
                         </div>
                     </article>
 
-                    <!-- Project 3 -->
                     <article class="project-card">
                         <div class="project-image">
                             <span class="project-number">03</span>
                         </div>
-
                         <div class="project-content">
                             <h3>Developer Portfolio</h3>
-
-                            <p>
-                                My personal portfolio showcasing my skills, projects and
-                                learning journey as a front-end developer.
-                            </p>
-
+                            <p>My personal portfolio showcasing my skills, projects and learning journey as a front-end developer.</p>
                             <div class="tags">
                                 <span>HTML</span>
                                 <span>CSS</span>
@@ -229,20 +206,13 @@
                         </div>
                     </article>
 
-                    <!-- Project 4 -->
                     <article class="project-card">
                         <div class="project-image">
                             <span class="project-number">04</span>
                         </div>
-
                         <div class="project-content">
                             <h3>Open Source Kigali</h3>
-
-                            <p>
-                                Contributed to an open-source project by fixing issues,
-                                improving UI elements and collaborating through GitHub.
-                            </p>
-
+                            <p>Contributed to an open-source project by fixing issues, improving UI elements and collaborating through GitHub.</p>
                             <div class="tags">
                                 <span>Git</span>
                                 <span>GitHub</span>
@@ -253,26 +223,13 @@
                 </div>
             </section>
 
-            <section class="contact" id="contact">
-
+            <section class="contact container" id="contact">
                 <div class="contact-info">
                     <h2>Let's Talk.</h2>
-
-                    <p>
-                    Have a project or a question? Feel free to contact me,drop me a line .I read everything
-                    </p>
-
-                    <a href="mailto:fraterne2023@gmail.com">
-                    fraterneiragibahirwe@gmail.com
-                    </a>
-
-                    <a href="https://github.com/fraternebahirwe" target="_blank">
-                    GitHub
-                    </a>
-
-                    <a href="#" target="_blank">
-                    LinkedIn
-                    </a>
+                    <p>Have a project or a question? Feel free to contact me, drop me a line. I read everything</p>
+                    <a href="mailto:fraterneiragibahirwe@gmail.com">fraterneiragibahirwe@gmail.com</a>
+                    <a href="https://github.com/fraternebahirwe" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/fraternebahirwe/" target="_blank">LinkedIn</a>
                 </div>
 
                 <form class="contact-form">
@@ -280,39 +237,29 @@
                         <label for="name">YOUR NAME</label><br>
                         <input id="name" type="text" placeholder="Your Name">
                     </div>
-
                     <div>
                         <label for="email">EMAIL</label><br>
                         <input id="email" type="email" placeholder="Your Email">
                     </div>
-
                     <div>
                         <label for="message">MESSAGE</label><br>
                         <textarea id="message" placeholder="Your Message"></textarea>
                     </div>
-
                     <button type="submit">Send Message</button>
                 </form>
             </section>
 
-            <footer class="footer">
-
+            <footer class="footer container">
                 <h2>LET'S BUILD.</h2>
-
                 <div class="footer-bottom">
-
                     <div class="socials">
                         <a href="https://github.com/fraternebahirwe" target="_blank">GitHub</a>
                         <a href="https://www.linkedin.com/in/fraternebahirwe/" target="_blank">LinkedIn</a>
                         <a href="mailto:fraterneiragibahirwe@gmail.com">Email</a>
                     </div>
-
-                    <p>
-                    © 2026 Fraterne Bahirwe — Built with HTML • CSS • JS
-                    </p>
+                    <p>© 2026 Fraterne Bahirwe — Built with HTML • CSS • JS</p>
                 </div>
             </footer>
         </main>
-    </body>iragi
-
+    </body>
 </html>
