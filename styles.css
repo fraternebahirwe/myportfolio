@@ -184,9 +184,7 @@ h1 {
 /* CIRCLE LOADER */
 .circle-loader {
   position: relative;
-  
   height: 95px;
-  flex-shrink: 0;
   margin-top: 5px;
   margin-right: 80px;
 }
@@ -201,17 +199,12 @@ h1 {
   position: absolute;
   left: 50%;
   top: 50%;
-
   transform:
-    rotate(calc(var(--i) * 16.36deg))
-    translateY(-43px)
-    rotate(90deg);
-
-  transform-origin: center;
-  color: var(--secondary-color);
-  font-size: 7px;
+    translate(-50%, -50%)
+    rotate(calc(var(--i) * 18deg))
+    translateY(-63px);
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: 2px;
 }
 
 .circle-center {
@@ -238,9 +231,7 @@ h1 {
 }
 
 @keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
+
 
   to {
     transform: rotate(360deg);
