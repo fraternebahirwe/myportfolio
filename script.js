@@ -14,8 +14,14 @@ if (themeBtn) {
   });
 }
 
-if (burgerBtn) {
+if (burgerBtn && navLinks) {
   burgerBtn.addEventListener("click", () => {
     navLinks.classList.toggle("active");
+
+    if (navLinks.classList.contains("active")) {
+      burgerBtn.textContent = "×";
+    } else {
+      burgerBtn.textContent = "☰";
+    }
   });
 }
