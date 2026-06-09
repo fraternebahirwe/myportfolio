@@ -1,4 +1,17 @@
+const themeBtn = document.querySelector(".theme-btn");
+const themeIcon = document.querySelector("#theme-icon");
 
+if (themeBtn && themeIcon) {
+  themeBtn.addEventListener("click", () => {
+    document.body.classList.toggle("light-mode");
+
+    if (document.body.classList.contains("light-mode")) {
+      themeIcon.src = "moon.png";
+    } else {
+      themeIcon.src = "sun.png";
+    }
+  });
+}
 
 
 const burgerBtn = document.querySelector(".burger-btn");

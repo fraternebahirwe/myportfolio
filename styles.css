@@ -5,12 +5,13 @@
   --border-color: #1f1f1f;
   --dark-border: #222;
 }
-
-.light-mode {
+body.light-mode {
   --primary-color: #ffffff;
   --secondary-color: #0a0a0a;
+  --text-color: #252525;
+  --border-color: #dcdcdc;
+  --dark-border: #dcdcdc;
 }
-
 * {
   box-sizing: border-box;
 }
@@ -30,7 +31,9 @@ body {
 
 .container {
   width: 100%;
-  padding: 0 80px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
 }
 
 main {
