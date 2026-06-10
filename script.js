@@ -29,3 +29,33 @@ if (burgerBtn && navLinks) {
     }
   });
 }
+
+
+const filterBtns = document.querySelectorAll(".filter-btn");
+
+filterBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+
+    filterBtns.forEach(button => {
+      button.classList.remove("active");
+    });
+
+    btn.classList.add("active");
+
+  });
+});
+
+const links = document.querySelectorAll(".nav-links a");
+const underline = document.querySelector(".underline");
+
+links.forEach(link => {
+  link.addEventListener("mouseenter", (e) => {
+    const rect = e.target.getBoundingClientRect();
+    const parentRect = e.target.parentElement.getBoundingClientRect();
+
+    const x = rect.left - parentRect.left;
+
+    underline.style.width = rect.width + "px";
+    underline.style.transform = `translateX(${x}px)`;
+  });
+});
