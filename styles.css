@@ -548,7 +548,6 @@ color:var(--primary-color);
 .arrow {
   font-size: 12px;
   transition: transform 0.3s ease;
-  font-weight: normal;
 
 }
 
@@ -659,6 +658,17 @@ body.light-mode .socials a {
   padding: 12px;
   border-radius: 6px;
   margin-top: 5px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: white;
+}
+
+.contact-form.submitted input:invalid,
+.contact-form.submitted textarea:invalid {
+  border-color: rgb(255, 0, 0);
 }
 
 .contact-form button {

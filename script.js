@@ -59,3 +59,17 @@ links.forEach(link => {
     underline.style.transform = `translateX(${x}px)`;
   });
 });
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector(".contact-form");
+
+  form.addEventListener("submit", (e) => {
+    if (!form.checkValidity()) {
+      e.preventDefault();
+      form.classList.add("submitted");
+    }
+  });
+});
