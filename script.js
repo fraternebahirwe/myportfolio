@@ -61,10 +61,18 @@ links.forEach(link => {
 });
 
 
-
-
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector(".contact-form");
+
+    if (!form) return;
+
+  form.addEventListener(
+    "invalid",
+    () => {
+      form.classList.add("submitted");
+    },
+    true
+  );
 
   form.addEventListener("submit", (e) => {
     if (!form.checkValidity()) {
