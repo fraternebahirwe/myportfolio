@@ -108,6 +108,8 @@ header {
   transition: all 0.3s ease;
 
 }
+
+
 .nav-links a {
   color: var(--text-color);
   font-size: 15px;
@@ -341,12 +343,33 @@ color:var(--primary-color);
 /* MARQUEE */
 .skills-marquee {
   width: 100%;
+  overflow: hidden;
   background: var(--secondary-color);
   color: var(--primary-color);
   padding: 15px 0;
   margin-bottom: 60px;
   white-space: nowrap;
   font-weight: bold;
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: marquee 15s linear infinite;
+}
+.track span {
+  display: inline-block;
+  padding-right: 40px;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 /* ABOUT */
@@ -427,7 +450,9 @@ color:var(--primary-color);
 .skill-card {
   border: 1px solid var(--border-color);
   padding: 24px;
+
 }
+
 
 .skill-card:hover {
   background-color: var(--dark-border);
@@ -577,6 +602,10 @@ body.light-mode .project-card {
   border: 1px solid #dcdcdc;
 }
 
+body.light-mode .skill-card:hover {
+  background: #f3f3f3;
+}
+
 body.light-mode .skill-bar {
   background: #e5e5e5;
 }
@@ -600,15 +629,33 @@ body.light-mode .tags span {
 }
 
 /* Hover des boutons filter*/
+/* Boutons filter en light mode */
+body.light-mode .filter button {
+  background: transparent;
+  color: rgb(97, 95, 95);
+  border: 1px solid #dcdcdc;
+}
+
+/* Hover: seulement la bordure et le texte deviennent noirs */
 body.light-mode .filter button:hover {
-  background: #0a0a0a;
-  color: #ffffff;
+  background: transparent;
+  color: black;
+  border: 1px solid black;
 }
 
-body.light-mode .filter button:hover a {
-  color: #ffffff;
+/* Bouton selectionne apres le clic */
+body.light-mode .filter-btn.active {
+  background: black;
+  color: white;
+  border: 1px solid black;
 }
 
+/* Quand le bouton selectionne est survole */
+body.light-mode .filter-btn.active:hover {
+  background: black;
+  color: white;
+  border: 1px solid black;
+}
 /* Contact inputs */
 body.light-mode .contact-form input,
 body.light-mode .contact-form textarea {
@@ -628,6 +675,11 @@ body.light-mode .socials a {
 body.light-mode .socials a:hover img {
   filter: brightness(0) invert(1);
 }
+
+body.light-mode .copy{
+  color: var(--dark-border);
+}
+
 
 /* CONTACT */
 .contact {

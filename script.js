@@ -1,18 +1,29 @@
 const themeBtn = document.querySelector(".theme-btn");
 const themeIcon = document.querySelector("#theme-icon");
 
+const savedTheme = localStorage.getItem("theme");
+
+if (savedTheme === "light") {
+  document.body.classList.add("light-mode");
+  if (themeIcon) themeIcon.src = "moon.png";
+} else {
+  document.body.classList.remove("light-mode");
+  if (themeIcon) themeIcon.src = "sun.png";
+}
+
 if (themeBtn && themeIcon) {
   themeBtn.addEventListener("click", () => {
     document.body.classList.toggle("light-mode");
 
     if (document.body.classList.contains("light-mode")) {
       themeIcon.src = "moon.png";
+      localStorage.setItem("theme", "light");
     } else {
       themeIcon.src = "sun.png";
+      localStorage.setItem("theme", "dark");
     }
   });
 }
-
 
 const burgerBtn = document.querySelector(".burger-btn");
 const navLinks = document.querySelector(".nav-links");
