@@ -56,21 +56,6 @@ filterBtns.forEach(btn => {
   });
 });
 
-const links = document.querySelectorAll(".nav-links a");
-const underline = document.querySelector(".underline");
-
-links.forEach(link => {
-  link.addEventListener("mouseenter", (e) => {
-    const rect = e.target.getBoundingClientRect();
-    const parentRect = e.target.parentElement.getBoundingClientRect();
-
-    const x = rect.left - parentRect.left;
-
-    underline.style.width = rect.width + "px";
-    underline.style.transform = `translateX(${x}px)`;
-  });
-});
-
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector(".contact-form");
@@ -92,3 +77,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+const words = ["HTML , CSS & JS responsive web sites.", "JavaScript apps.", "clean UI."], el = document.getElementById("changing-text");
+let word = 0, char = 0, del = false;
+
+(function type() {
+    const cur = words[word];
+    char += del ? -1 : 1;
+    el.textContent = cur.substring(0, char);
+
+    let speed = del ? 50 : 100;
+
+    if (!del && char === cur.length) { speed = 2000; del = true; } 
+    else if (del && char === 0) { del = false; word = (word + 1) % words.length; speed = 400; }
+
+    setTimeout(type, speed);
+})();

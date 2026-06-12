@@ -37,8 +37,10 @@ body {
 }
 
 main {
-  margin-top: 50px;
+  padding-top: 110px;
 }
+
+
 
 a {
   text-decoration: none;
@@ -76,11 +78,19 @@ a {
   align-items: center;
   padding: 15px 0;
   background: var(--primary-color);
+  
 }
 
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: var(--primary-color);
   border-bottom: 1px solid var(--border-color);
 }
+
 
 .logo {
   background: var(--secondary-color);
@@ -95,19 +105,37 @@ header {
   gap: 30px;
   margin-left: auto;
   margin-right: auto;
-  position: relative; 
+  position: relative;
 }
 
-.underline {
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-color); /* Couleur grise par défaut */
+  font-size: 18px;           /* Taille de police unique */
+  padding: 3px 7px;
+  position: relative;
+  transition:  0.9s ease;
+}
+
+.nav-links a:hover {
+  color: var(--secondary-color);
+}
+
+.nav-links a::before {
+  content: '';
   position: absolute;
-  bottom: 0;
+  bottom: -5px; 
   left: 0;
-  height: 2px;
-  width: 0;
-  background: var(--secondary-color);
+  width: 0%;
+  height: 3px;
+  background-color: var(--secondary-color) ;/* Votre couleur rouge */
   transition: all 0.3s ease;
-
 }
+
+.nav-links a:hover::before{
+width:100%;
+}
+
 
 
 .nav-links a {
@@ -121,6 +149,10 @@ header {
 
 html {
   scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 90px;
 }
 
 .theme-btn,
@@ -220,10 +252,13 @@ h2{
 }
 
 .build {
-  font-size: 50px;
+  font-size: 30px;
   margin-bottom: 18px;
 }
 
+#changing-text{
+  color:var(--secondary-color);
+}
 .hero-description {
   max-width: 430px;
   line-height: 1.6;
@@ -471,8 +506,7 @@ color:var(--primary-color);
   border: 1px solid var(--text-color);
   padding: 2px 2px;
   border-radius: 4px;
-  display:flex;
-  align-items: center;
+
 }
 
 .skill-bar {
@@ -589,6 +623,10 @@ body.light-mode .skill-card,
 body.light-mode .project-card {
   background: #ffffff;
   border: 1px solid #dcdcdc;
+}
+
+body.light-mode .build {
+  color: var(--border-color);
 }
 
 body.light-mode .skill-card:hover {
@@ -836,7 +874,7 @@ body.light-mode .copy{
   }
 
   main {
-    margin-top: 30px;
+    padding-top: 50px;
   }
 
   .navbar {
