@@ -485,31 +485,20 @@ color:var(--primary-color);
   background: var(--secondary-color);
   height: 100%;
   border-radius: 20px;
+  width: 0;
+  animation: fillSkill 1.4s ease forwards;
 }
 
-.html {
-  width: 85%;
+@keyframes fillSkill {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: var(--level);
+  }
 }
 
-.css {
-  width: 80%;
-}
-
-.javascript {
-  width: 55%;
-}
-
-.git {
-  width: 60%;
-}
-
-.responsive {
-  width: 70%;
-}
-
-.problem {
-  width: 90%;
-}
 
 /* PROJECTS */
 .filter {
