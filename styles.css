@@ -266,7 +266,7 @@ h2{
 }
 
 .hero-buttons {
-  gap: 15px;
+    
   margin-top: 30px;
 }
 
@@ -274,7 +274,7 @@ h2{
 .btn-secondary {
   border: 1px solid var(--secondary-color);
   border-radius: 30px;
-  padding: 10px 20px;
+  padding: 10px 15px;
   transition: transform 0.3s ease;
   font-size: 18px;
 
@@ -297,9 +297,9 @@ h2{
   transform: translateY(-5px);
 }
 
-.btn-primary:hover {
-  background: var(--primary-color);
-  color: var(--secondary-color);
+.btn-secondary:hover {
+  background: var(--secondary-color);
+  color: var(--primary-color);
 }
 
 

@@ -78,13 +78,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-const words = ["HTML , CSS & JS responsive web sites.", "JavaScript apps.", "clean UI."], el = document.getElementById("changing-text");
+const words = ["HTML , CSS & JS responsive web sites.", "JavaScript apps.", "clean UI."], elem = document.getElementById("changing-text");
 let word = 0, char = 0, del = false;
 
 (function type() {
     const cur = words[word];
     char += del ? -1 : 1;
-    el.textContent = cur.substring(0, char);
+    elem.textContent = cur.substring(0, char);
 
     let speed = del ? 50 : 100;
 
