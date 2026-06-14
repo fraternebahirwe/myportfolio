@@ -926,29 +926,44 @@ body.light-mode .copy{
     display: block;
   }
 
+  @media (max-width: 768px) {
   .nav-links {
-    display: none;
-    width: 100%;
-    order: 3;
+    display: flex;
+    flex-direction: column;
+    
+    /* MODIFICATIONS CLÉS POUR ÉTIRER DE GAUCHE À DROITE : */
+    position: fixed;          /* Passage en 'fixed' pour ignorer les paddings de la navbar parent */
+    top: 60px;                /* Ajustez cette valeur (ex: 60px ou 70px) selon la hauteur exacte de votre navbar */
+    left: 0;
+    right: 0;
+    width: 100vw;             /* Force l'occupation de 100% de la largeur de la fenêtre visible */
+    
+    background: #0a0a0a;
+    z-index: 99;
+    overflow: hidden;
+
+    /* EFFET TIROIR MÉCANIQUE */
+    max-height: 0; 
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .nav-links.active {
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-    padding: 20px 0;
-    background: var(--primary-color);
-    border-top: 1px solid var(--border-color);
+    max-height: 370px; 
   }
 
-  .nav-links.active a {
-    margin: 0;
-    padding: 14px 0;
-    font-size: 18px;
+  .nav-links a {
+    display: block;
+    padding: 5px 4px;       /* Aligne parfaitement le texte par rapport au bord de l'écran */
+    font-size: 24px;
     font-weight: 600;
-    color: var(--secondary-color);
-    border-bottom: 1px solid var(--border-color);
+    color: #ffffff;
+    text-decoration: none;
+    box-sizing: border-box;
+    border-bottom: 1px solid #1a1a1a;
   }
+}
+
+
 
   /* --- Section Hero --- */
   .hero {
