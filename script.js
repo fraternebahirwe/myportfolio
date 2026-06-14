@@ -95,3 +95,34 @@ if (elem) { // Sécurité : évite de planter si l'élément n'est pas chargé
       setTimeout(type, speed);
   })();
 }
+
+
+
+document.querySelector('.contact-form').addEventListener('submit', function(e) {
+    e.preventDefault(); // Bloque la redirection et le ReCAPTCHA
+    
+    const form = this;
+    const successMessage = document.getElementById('form-success');
+    const data = new FormData(form);
+
+    fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            successMessage.style.display = 'block'; // Affiche le message de succès
+            form.reset(); // Vide les champs du formulaire
+        } else {
+            alert("Une erreur est survenue, veuillez réessayer.");
+        }
+    })
+    .catch(error => {
+        alert("Erreur de connexion. Veuillez réessayer.");
+    });
+});
+
+
