@@ -845,13 +845,12 @@ body.light-mode .copy{
   padding: 40px 0;
 }
 
-.footer-h2 {
+.footer-title {
   font-size: 120px;
   margin:0;
   display: flex;
   justify-content: center;
   border-bottom: 1px solid var(--border-color);
-
 }
 .copy{
   color: var(--text-color);
@@ -894,7 +893,7 @@ body.light-mode .copy{
 
   main {
     padding-top: 60px;
-    padding-bottom: 120px;
+    padding-bottom: 130px;
   }
 
   /* --- Navigation --- */
@@ -962,8 +961,8 @@ body.light-mode .copy{
     margin-bottom: 15px;
   }
 
-  h1 {
-    font-size: 55px; /* Légèrement réduit pour éviter les coupures */
+  h1,h2{
+    font-size: 30px; /* Légèrement réduit pour éviter les coupures */
     letter-spacing: -1px;
   }
   .hero .build{
@@ -1027,7 +1026,7 @@ body.light-mode .copy{
 
   .project-card {
     width: 100%;
-    max-width: 100%;
+    position: relative;  
   }
 
   .project-image {
@@ -1054,6 +1053,22 @@ body.light-mode .copy{
     text-align: center;
     width: 100%;
   }
+.footer h2 {
+  font-size: 60px;
+  display: flex;
+  }
+
+  .contact-form button {
+  width: 100%;
+  height:50px;
+  transition: transform 0.3s ease;
+}
+
+.contact-form button img {
+  width: 20px;
+  height: 15px;
+}
+
 }
 
 /* RESPONSIVE SUB-480px (Smartphones) */
@@ -1089,9 +1104,6 @@ body.light-mode .copy{
 
   .typed-cursor, 
   [class*="cursor"] {
-    font-size: 24px !important;    /* Force la taille à correspondre à votre texte réduit */
-    line-height: 1.2 !important;   /* Aligne la hauteur sur celle du texte */
-    display: inline-block;
-    height: auto;
+    font-size: 18px !important;    /* Force la taille à correspondre à votre texte réduit */
   }
 }
