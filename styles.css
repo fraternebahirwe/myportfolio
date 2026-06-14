@@ -576,7 +576,20 @@ color:var(--primary-color);
 .project-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;    /* Idéal si vous voulez voir toute l'image dans le cadre noir */
+  object-fit: cover ;    
+} 
+
+.project-link {
+  display: contents;  /*  le titre à garder son alignement et son comportement d'origine */
+}
+/* 2. Crée une zone cliquable invisible qui prend 100% de la .project-card */
+.project-link::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 
@@ -872,17 +885,19 @@ body.light-mode .copy{
   filter:  brightness(0);
 }
 
-
-/* RESPONSIVE */
+/* RESPONSIVE SUB-768px (Tablettes et Mobiles) */
 @media (max-width: 768px) {
   .container {
-    padding: 0 20px;
+    padding:0 20px;
   }
+
 
   main {
-    padding-top: 50px;
+    padding-top: 60px;
+    padding-bottom: 120px;
   }
 
+  /* --- Navigation --- */
   .navbar {
     position: relative;
     display: flex;
@@ -892,6 +907,13 @@ body.light-mode .copy{
 
   .nav-name {
     flex-shrink: 0;
+  }
+
+  
+  .nav-name span:first-child {
+    font-size: 14px;
+    display: block;
+    margin-bottom: 2px;
   }
 
   .nav-right {
@@ -929,20 +951,46 @@ body.light-mode .copy{
     border-bottom: 1px solid var(--border-color);
   }
 
+  /* --- Section Hero --- */
   .hero {
     display: block;
   }
 
+  /* Ajustement du titre d'introduction général (ex: "Hello, I'm") */
+  .hero p, .hero .intro-text {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+
   h1 {
-    font-size: 60px;
-    letter-spacing: -2px;
-    line-height: 1;
+    font-size: 55px; /* Légèrement réduit pour éviter les coupures */
+    letter-spacing: -1px;
+  }
+  .hero .build{
+    font-size: 14px;
+  }
+
+  /* CORRECTION : Boutons superposés par défaut sous 768px */
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-top: 0;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    margin-top: 0;
   }
 
   .circle-loader {
     display: none;
   }
 
+  /* --- Section À Propos --- */
   .about-content {
     display: flex;
     flex-direction: column;
@@ -959,17 +1007,17 @@ body.light-mode .copy{
     overflow: hidden;
     border-radius: 12px;
     background: #ffffff;
-  
   }
 
-   .about-img {
+  .about-img {
     width: 100%;
     height: 100%;
     object-fit: contain;
     object-position: center top;
-     background: #ffffff;
+    background: #ffffff;
   }
 
+  /* --- Grilles & Cartes --- */
   .skills-grid,
   .projects-grid,
   .contact,
@@ -977,13 +1025,40 @@ body.light-mode .copy{
     grid-template-columns: 1fr;
   }
 
+  .project-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .project-image {
+    width: 100%;
+    height: 220px;
+  }
+
+  .project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  /* --- CORRECTION : Visibilité du Footer --- */
+  footer {
+    padding: 40px 0;
+    width: 100%;
+  }
+
   .footer-bottom {
+    display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 16px;
+    text-align: center;
+    width: 100%;
   }
 }
 
+/* RESPONSIVE SUB-480px (Smartphones) */
 @media (max-width: 480px) {
+  /* Ajustement précis du titre "Fraterne Bahirwe" */
   .nav-name span:last-child {
     font-size: 13px;
   }
@@ -998,22 +1073,25 @@ body.light-mode .copy{
     padding: 7px 9px;
   }
 
+  /* CORRECTION FINALE : Maintient les boutons l'un sous l'autre sur très petit écran */
   .hero-buttons {
-    flex-direction: row;
-    align-items: flex-start;
-  }
-
-  .btn-primary,
-  .btn-secondary {
-    display: inline-block;
-    margin: 0;
+    flex-direction: column;
+    align-items: stretch;
   }
 
   h1 {
-    font-size: 48px;
+    font-size: 40px; /* Plus adapté aux petits écrans */
   }
 
   .about-image-box {
-    height: 520px;
+    height: 320px;
+  }
+
+  .typed-cursor, 
+  [class*="cursor"] {
+    font-size: 24px !important;    /* Force la taille à correspondre à votre texte réduit */
+    line-height: 1.2 !important;   /* Aligne la hauteur sur celle du texte */
+    display: inline-block;
+    height: auto;
   }
 }
