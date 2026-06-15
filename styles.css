@@ -1085,7 +1085,10 @@ body.light-mode .copy{
     height: 100%;
     object-fit: contain;
   }
-
+.contact-form input,
+  .contact-form textarea {
+    font-size: 16px !important;
+  }
   /* --- CORRECTION : Visibilité du Footer --- */
   footer {
     padding: 40px 0;

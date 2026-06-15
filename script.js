@@ -126,3 +126,10 @@ document.querySelector('.contact-form').addEventListener('submit', function(e) {
 });
 
 
+form.addEventListener("submit", (e) => {
+  if (!form.checkValidity()) {
+    e.preventDefault();
+  }
+  // On force l'ajout de la classe pour déclencher le CSS immédiatement au clic valide
+  form.classList.add("submitted");
+});
