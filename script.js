@@ -5,10 +5,10 @@ const savedTheme = localStorage.getItem("theme");
 
 if (savedTheme === "light") {
   document.body.classList.add("light-mode");
-  if (themeIcon) themeIcon.src = "moon.png";
+  if (themeIcon) themeIcon.src = "img/moon.png";
 } else {
   document.body.classList.remove("light-mode");
-  if (themeIcon) themeIcon.src = "sun.png";
+  if (themeIcon) themeIcon.src = "img/sun.png";
 }
 
 if (themeBtn && themeIcon) {
@@ -16,10 +16,10 @@ if (themeBtn && themeIcon) {
     document.body.classList.toggle("light-mode");
 
     if (document.body.classList.contains("light-mode")) {
-      themeIcon.src = "moon.png";
+      themeIcon.src = "img/moon.png";
       localStorage.setItem("theme", "light");
     } else {
-      themeIcon.src = "sun.png";
+      themeIcon.src = "img/sun.png";
       localStorage.setItem("theme", "dark");
     }
   });
