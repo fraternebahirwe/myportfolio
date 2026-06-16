@@ -20,7 +20,6 @@ The website focuses on user experience, accessibility, responsiveness, and clean
 
 - 🌙 Dark / Light Mode
 - 🧭 Smooth Navigation
-- 🎬 Scroll Animations
 - 📱 Fully Responsive Design
 - 📬 Contact Form
 - 🎨 Modern UI Design
