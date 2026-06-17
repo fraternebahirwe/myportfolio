@@ -61,9 +61,6 @@ portfolio/
 └── .DS_Store
 ```
 
-```
-
----
 
 ## 🚀 Getting Started
 
