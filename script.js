@@ -46,16 +46,28 @@ if (burgerBtn && navLinks) {
   });
 }
 
-// --- FILTRES DE PROJETS (Si existants) ---
+// --- FILTRES DE PROJETS ---
 const filterBtns = document.querySelectorAll(".filter-btn");
+const projectCards = document.querySelectorAll(".project-card");
+
 filterBtns.forEach(btn => {
   btn.addEventListener("click", () => {
     filterBtns.forEach(button => button.classList.remove("active"));
     btn.classList.add("active");
+
+    const category = btn.textContent.toLowerCase();
+
+    projectCards.forEach(card => {
+      if (category === "all" || card.dataset.category === category) {
+        card.style.display = "";
+      } else {
+        card.style.display = "none";
+      }
+    });
   });
 });
 
-// --- VALIDATION DU FORMULAIRE DE CONTACT ---
+// --- VALIDATION & ENVOI DU FORMULAIRE DE CONTACT ---
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector(".contact-form");
   if (!form) return;
@@ -63,10 +75,31 @@ document.addEventListener("DOMContentLoaded", () => {
   form.addEventListener("invalid", () => { form.classList.add("submitted"); }, true);
 
   form.addEventListener("submit", (e) => {
-    if (!form.checkValidity()) {
-      e.preventDefault();
-      form.classList.add("submitted");
-    }
+    e.preventDefault();
+    form.classList.add("submitted");
+
+    if (!form.checkValidity()) return;
+
+    const successMessage = document.getElementById("form-success");
+    const data = new FormData(form);
+
+    fetch(form.action, {
+      method: "POST",
+      body: data,
+      headers: { "Accept": "application/json" }
+    })
+    .then(response => {
+      if (response.ok) {
+        successMessage.style.display = "block";
+        form.reset();
+        form.classList.remove("submitted");
+      } else {
+        alert("Une erreur est survenue, veuillez réessayer.");
+      }
+    })
+    .catch(() => {
+      alert("Erreur de connexion. Veuillez réessayer.");
+    });
   });
 });
 
@@ -98,31 +131,6 @@ if (elem) { // Sécurité : évite de planter si l'élément n'est pas chargé
 
 
 
-document.querySelector('.contact-form').addEventListener('submit', function(e) {
-    e.preventDefault(); // Bloque la redirection et le ReCAPTCHA
-    
-    const form = this;
-    const successMessage = document.getElementById('form-success');
-    const data = new FormData(form);
 
-    fetch(form.action, {
-        method: 'POST',
-        body: data,
-        headers: {
-            'Accept': 'application/json'
-        }
-    })
-    .then(response => {
-        if (response.ok) {
-            successMessage.style.display = 'block'; // Affiche le message de succès
-            form.reset(); // Vide les champs du formulaire
-        } else {
-            alert("Une erreur est survenue, veuillez réessayer.");
-        }
-    })
-    .catch(error => {
-        alert("Erreur de connexion. Veuillez réessayer.");
-    });
-});
 
 

@@ -110,11 +110,11 @@ header {
 
 .nav-links a {
   text-decoration: none;
-  color: var(--text-color); /* Couleur grise par défaut */
-  font-size: 18px;           /* Taille de police unique */
+  color: var(--text-color);
+  font-size: 15px;
   padding: 3px 7px;
   position: relative;
-  transition:  0.9s ease;
+  transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
@@ -124,27 +124,16 @@ header {
 .nav-links a::before {
   content: '';
   position: absolute;
-  bottom: -5px; 
+  bottom: -5px;
   left: 0;
   width: 0%;
   height: 3px;
-  background-color: var(--secondary-color) ;/* Votre couleur rouge */
+  background-color: var(--secondary-color);
   transition: all 0.3s ease;
 }
 
-.nav-links a:hover::before{
-width:100%;
-}
-
-
-
-.nav-links a {
-  color: var(--text-color);
-  font-size: 15px;
-}
-
-.nav-links a:hover {
-  color: var(--secondary-color);
+.nav-links a:hover::before {
+  width: 100%;
 }
 
 html {
@@ -955,44 +944,39 @@ body.light-mode .copy{
     display: flex;
     justify-content: center;
     align-items: center;
-    
   }
 
-@media (max-width: 768px) {
   .nav-links {
     display: flex;
     flex-direction: column;
-    gap: 10px; /* 👈 Contrôle direct de l'espace entre tes liens (ajuste à 5px ou 10px selon ton goût) */
-    
-    position: fixed;          
-    top: 60px;                
+    gap: 10px;
+    position: fixed;
+    top: 60px;
     left: 0;
     right: 0;
-    width: 100vw;             
+    width: 100vw;
     background: #0a0a0a;
     z-index: 99;
     overflow: hidden;
-    max-height: 0; 
+    max-height: 0;
     transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .nav-links.active {
-    max-height: 370px; 
+    max-height: 370px;
   }
 
-  /* Resserrer l'espace interne de chaque lien individuel */
   .nav-links a {
     display: block;
-    padding: 15px 15px; /* 👈 Réduit le premier chiffre (le padding vertical haut/bas) pour resserrer */
+    padding: 15px 15px;
     font-size: 24px;
     font-weight: 600;
-    color:var(--secondary-color);
+    color: var(--secondary-color);
     text-decoration: none;
     box-sizing: border-box;
     border-bottom: 1px solid #1a1a1a;
-    margin: 0; /* 👈 Supprime toute marge parasite héritée du CSS global */
+    margin: 0;
   }
-}
 
 
 
@@ -1011,8 +995,8 @@ body.light-mode .copy{
     font-size: 30px; /* Légèrement réduit pour éviter les coupures */
     letter-spacing: -1px;
   }
-  .hero .build{
-    font-size: 14px;
+  .hero .build {
+    font-size: 18px;
   }
 
   /* CORRECTION : Boutons superposés par défaut sous 768px */
